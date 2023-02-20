@@ -145,7 +145,14 @@ public class Main {
                     house.getRooms().forEach(System.out::println);
                     System.out.println("-----------------------------------------");
                 });
+        //2 + 1 ev arama filtresi
 
-
+        System.out.println("2 + 1 ev filtreleme sonucu");
+        houseService.getAllHousesByNormalRoomCountAndLivingRoomCount(2, 1)
+                .forEach(house -> {
+                    System.out.printf(house.toString());
+                    house.getRooms().forEach(System.out::println);
+                    System.out.println("-----------------------------------------");
+                });
     }
 }
