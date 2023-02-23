@@ -7,7 +7,7 @@ import java.util.List;
 
 public class NormalHouse extends House {
 
-    public NormalHouse(Double price, List<Room> rooms){
+    public NormalHouse(double price, List<Room> rooms){
         this.houseType = HouseType.NORMAL;
         this.price = price;
         this.rooms = rooms;

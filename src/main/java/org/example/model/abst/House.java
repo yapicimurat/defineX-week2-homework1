@@ -7,20 +7,20 @@ import java.util.List;
 
 public abstract class House {
     protected HouseType houseType;
-    protected Double price;
-    protected Double volumeInSquareMeter;
+    protected double price;
+    protected double volumeInSquareMeter;
     protected List<Room> rooms = List.of();
 
     public HouseType getHouseType() {
         return houseType;
     }
 
-    public Double getVolumeInSquareMeter() {
+    public double getVolumeInSquareMeter() {
         return rooms.stream().map(Room::getVolumeInSquareMeter)
                 .reduce(0.0, Double::sum);
     }
 
-    public Double getPrice() {
+    public double getPrice() {
         return price;
     }
 

@@ -20,43 +20,43 @@ public class HouseServiceImpl implements HouseService{
     }
 
     @Override
-    public Double totalPriceOfNormalHouses() {
+    public double totalPriceOfNormalHouses() {
         return getTotalPriceByHouseType(HouseType.NORMAL);
     }
 
     @Override
-    public Double totalPriceOfVillaHouses() {
+    public double totalPriceOfVillaHouses() {
         return getTotalPriceByHouseType(HouseType.VILLA);
     }
 
     @Override
-    public Double totalPriceOfSummerHouses() {
+    public double totalPriceOfSummerHouses() {
         return getTotalPriceByHouseType(HouseType.SUMMER_HOUSE);
     }
 
     @Override
-    public Double totalPriceOfEveryTypesOfHouses() {
+    public double totalPriceOfEveryTypesOfHouses() {
         return getTotalPriceAllHouses();
     }
 
     @Override
-    public Double averageVolumeInSquareMeterOfNormalHouses() {
-        return getAverageVolumeInSquareMeterByHouseType(HouseType.NORMAL);
+    public double averageAreaInSquareMeterOfNormalHouses() {
+        return getAverageAreaInSquareMeterByHouseType(HouseType.NORMAL);
     }
 
     @Override
-    public Double averageVolumeInSquareMeterOfVillaHouses() {
-        return getAverageVolumeInSquareMeterByHouseType(HouseType.VILLA);
+    public double averageAreaInSquareMeterOfVillaHouses() {
+        return getAverageAreaInSquareMeterByHouseType(HouseType.VILLA);
     }
 
     @Override
-    public Double averageVolumeInSquareMeterOfSummerHouses() {
-        return getAverageVolumeInSquareMeterByHouseType(HouseType.SUMMER_HOUSE);
+    public double averageAreaInSquareMeterOfSummerHouses() {
+        return getAverageAreaInSquareMeterByHouseType(HouseType.SUMMER_HOUSE);
     }
 
     @Override
-    public Double averageVolumeInSquareMeterOfEveryTypesOfHouses() {
-        return getAverageVolumeInSquareMeterAllHouses();
+    public double averageAreaInSquareMeterOfEveryTypesOfHouses() {
+        return getAverageAreaInSquareMeterAllHouses();
     }
 
     @Override
@@ -74,26 +74,26 @@ public class HouseServiceImpl implements HouseService{
 
     private Double getTotalPriceByHouseType(HouseType houseType){
         return houseRepository.getAllByHouseType(houseType)
-                .stream().map(House::getPrice)
-                .reduce(0.0, Double::sum);
+                .stream().mapToDouble(House::getPrice)
+                .sum();
     }
 
-    private Double getTotalPriceAllHouses(){
+    private double getTotalPriceAllHouses(){
         return houseRepository.getAll()
                 .stream().map(House::getPrice)
                 .reduce(0.0, Double::sum);
     }
 
-    private Double getAverageVolumeInSquareMeterByHouseType(HouseType houseType){
-        return houseRepository.getAllByHouseType(houseType)
-                .stream().map(House::getVolumeInSquareMeter)
-                .reduce(0.0, Double::sum);
+    private double getAverageAreaInSquareMeterByHouseType(HouseType houseType){
+            return houseRepository.getAllByHouseType(houseType)
+                .stream().mapToDouble(House::getVolumeInSquareMeter)
+                .average().orElse(0.0);
     }
 
-    private Double getAverageVolumeInSquareMeterAllHouses(){
+    private double getAverageAreaInSquareMeterAllHouses(){
         return houseRepository.getAll()
-                .stream().map(House::getVolumeInSquareMeter)
-                .reduce(0.0, Double::sum);
+                .stream().mapToDouble(House::getVolumeInSquareMeter)
+                .average().orElse(0.0);
     }
 
 }

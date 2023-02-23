@@ -7,8 +7,8 @@ import java.util.List;
 
 public class Villa extends House {
 
-    public Villa(Double price, List<Room> rooms){
-        this.houseType = HouseType.NORMAL;
+    public Villa(double price, List<Room> rooms){
+        this.houseType = HouseType.VILLA;
         this.price = price;
         this.rooms = rooms;
         this.volumeInSquareMeter = getVolumeInSquareMeter();

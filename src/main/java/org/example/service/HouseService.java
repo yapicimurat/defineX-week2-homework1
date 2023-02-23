@@ -6,14 +6,14 @@ import java.util.List;
 
 public interface HouseService {
     public List<House> getAll();
-    public Double totalPriceOfNormalHouses();
-    public Double totalPriceOfVillaHouses();
-    public Double totalPriceOfSummerHouses();
-    public Double totalPriceOfEveryTypesOfHouses();
-    public Double averageVolumeInSquareMeterOfNormalHouses();
-    public Double averageVolumeInSquareMeterOfVillaHouses();
-    public Double averageVolumeInSquareMeterOfSummerHouses();
-    public Double averageVolumeInSquareMeterOfEveryTypesOfHouses();
+    public double totalPriceOfNormalHouses();
+    public double totalPriceOfVillaHouses();
+    public double totalPriceOfSummerHouses();
+    public double totalPriceOfEveryTypesOfHouses();
+    public double averageAreaInSquareMeterOfNormalHouses();
+    public double averageAreaInSquareMeterOfVillaHouses();
+    public double averageAreaInSquareMeterOfSummerHouses();
+    public double averageAreaInSquareMeterOfEveryTypesOfHouses();
     public List<House> getAllHousesByNormalRoomCountAndLivingRoomCount(int normalRoomCount, int livingRoomAmount);
     public void createHouse(House house);
 }

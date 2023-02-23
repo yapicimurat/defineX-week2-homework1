@@ -6,8 +6,8 @@ import org.example.model.abst.House;
 import java.util.List;
 
 public class SummerHouse extends House {
-    public SummerHouse(Double price, List<Room> rooms){
-        this.houseType = HouseType.NORMAL;
+    public SummerHouse(double price, List<Room> rooms){
+        this.houseType = HouseType.SUMMER_HOUSE;
         this.price = price;
         this.rooms = rooms;
         this.volumeInSquareMeter = getVolumeInSquareMeter();

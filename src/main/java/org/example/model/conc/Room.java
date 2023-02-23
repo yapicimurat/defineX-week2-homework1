@@ -4,25 +4,25 @@ import org.example.model.RoomType;
 
 public class Room {
 
-    public Room(RoomType roomType, Double volumeInSquareMeter){
+    public Room(RoomType roomType, Double areaInSquareMeter){
         this.roomType = roomType;
-        this.volumeInSquareMeter = volumeInSquareMeter;
+        this.areaInSquareMeter = areaInSquareMeter;
     }
     private RoomType roomType;
-    private Double volumeInSquareMeter;
+    private Double areaInSquareMeter;
     public RoomType getRoomType() {
         return roomType;
     }
 
     public Double getVolumeInSquareMeter() {
-        return volumeInSquareMeter;
+        return areaInSquareMeter;
     }
 
     @Override
     public String toString() {
         return "Room{" +
                 "roomType=" + roomType +
-                ", volumeInSquareMeter=" + volumeInSquareMeter +
+                ", volumeInSquareMeter=" + areaInSquareMeter +
                 '}';
     }
 }
